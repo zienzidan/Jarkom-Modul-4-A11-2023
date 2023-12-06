@@ -36,7 +36,11 @@ agar lebih jelas, kami juga mengisi sheet yang telah ditentukan.
 
 > Tentukan Pembagian IP pada VLSM
 
-### Langkah Ke 3
+Berikut merupakan sheet pembagian IP pada VLSM
+![Alt text](image/Pembagian%20IP%20VLSM.png)
+
+## CIDR
+### Langkah Ke 1
 
 > Lakukan Penggabungan rute hingga menjadi satu kesatuan agar dapat dibuat pembagian IP CIDR
 
@@ -88,7 +92,7 @@ Lakukan penggabungan Subnet I
 
 ![first](image/19.penggabunganI.png)
 
-### Langkah Ke 4
+### Langkah Ke 2
 
 > Setelah mendapatkan penggabungan CIDR lakukan pembagian IP untuk CIDR
 
@@ -189,3 +193,216 @@ Aura hanya boleh mengakses subnet dan tidak memberikan permission karena aura di
 Lakukan pengiriman pesan atau ping ke alamat IP yang dituju
 
 ![first](image/29.tes.png)
+
+## VLSM
+### Konfigurasi Network
+- Aura
+ ```shell
+ auto eth0
+iface eth0 inet dhcp
+
+auto eth1
+iface eth1 inet static
+	address 192.174.0.1
+	netmask 255.255.255.252
+
+auto eth2
+iface eth2 inet static
+	address 192.174.0.37
+	netmask 255.255.255.252
+
+auto eth3
+iface eth3 inet static
+	address 192.174.0.17
+	netmask 255.255.255.252
+ ```
+
+- Denken
+```shell
+auto eth0
+iface eth0 inet static
+	address 192.174.0.38
+	netmask 255.255.255.252
+	gateway 192.174.0.37
+
+auto eth1
+iface eth1 inet static
+	address 192.174.2.1
+	netmask 255.255.255.0
+```
+
+- Frieren
+```shell
+auto eth0
+iface eth0 inet static
+	address 192.174.0.5
+	netmask 255.255.255.252
+
+auto eth1
+iface eth1 inet static
+	address 192.174.0.65
+	netmask 255.255.255.224
+
+auto eth2
+iface eth2 inet static
+	address 192.174.0.2
+	netmask 255.255.255.252
+	gateway 192.174.0.1
+
+```
+
+- Flamme
+```shell
+auto eth0
+iface eth0 inet static
+	address 192.174.0.9
+	netmask 255.255.255.252
+
+auto eth1
+iface eth1 inet static
+	address 192.174.8.1
+	netmask 255.255.255.0
+
+auto eth2
+iface eth2 inet static
+	address 192.174.0.13
+	netmask 255.255.255.252
+
+auto eth3
+iface eth3 inet static
+	address 192.174.0.6
+	netmask 255.255.255.252
+	gateway 192.174.0.5
+```
+- Fern
+```shell
+auto eth0
+iface eth0 inet static
+	address 192.174.24.1
+	netmask 255.255.255.252
+
+auto eth1
+iface eth1 inet static
+	address 192.174.0.10
+	netmask 255.255.255.0
+	gateway 192.174.0.9
+```
+- Himmel
+```shell
+auto eth0
+iface eth0 inet static
+	address 192.174.0.14
+	netmask 255.255.255.252
+	gateway 192.174.0.13
+
+auto eth1
+iface eth1 inet static
+	address 192.174.0.41
+	netmask 255.255.255.248
+```
+- Eisen
+```shell
+auto eth0
+iface eth0 inet static
+	address 192.174.0.18
+	netmask 255.255.255.252
+	gateway 192.174.0.17
+
+auto eth1
+iface eth1 inet static
+	address 192.174.0.49
+	netmask 255.255.255.248
+
+auto eth2
+iface eth2 inet static
+	address 192.174.0.25
+	netmask 255.255.255.252
+
+auto eth3
+iface eth3 inet static
+	address 192.174.0.21
+	netmask 255.255.255.252
+
+auto eth4
+iface eth4 inet static
+	address 192.174.0.29
+	netmask 255.255.255.252
+```
+- Lugner
+```shell
+auto eth0
+iface eth0 inet static
+	address 192.174.0.26
+	netmask 255.255.255.252
+	gateway 192.174.0.25
+
+auto eth1
+iface eth1 inet static
+	address 192.174.12.1
+	netmask 255.255.255.0
+auto eth2
+iface eth2 inet static
+	address 192.174.1.1
+	netmask 255.255.255.0
+```
+- Linie
+```shell
+auto eth0
+iface eth0 inet static
+	address 192.174.4.1
+	netmask 255.255.254.0
+
+auto eth1
+iface eth1 inet static
+	address 192.174.0.33
+	netmask 255.255.255.252
+
+auto eth2
+iface eth2 inet static
+	address 192.174.0.30
+	netmask 255.255.255.252
+	gateway 192.174.0.29
+```
+- Lawine
+```shell
+auto eth0
+iface eth0 inet static
+	address 192.174.0.34
+	netmask 255.255.255.252
+	gateway 192.174.0.33
+
+auto eth1
+iface eth1 inet static
+	address 192.174.0.129
+	netmask 255.255.255.192
+```
+- Heiter
+```shell
+auto eth0
+iface eth0 inet static
+	address 192.174.0.130
+	netmask 255.255.255.192
+	gateway 192.174.0.129
+
+auto eth1
+iface eth1 inet static
+	address 192.174.16.1
+	netmask 255.255.255.0
+```
+- AppetitRegion
+```shell
+auto eth0
+iface eth0 inet static
+	address 192.174.24.2
+	netmask 255.255.248.0
+	gateway  192.174.24.1
+```
+
+- LaubHills
+```shell
+auto eth0
+iface eth0 inet static
+	address 192.174.24.3
+	netmask 255.255.248.0
+	gateway 192.174.24.1
+```
